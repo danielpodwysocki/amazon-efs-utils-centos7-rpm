@@ -4,4 +4,4 @@ jobs:
   build-rpm:
     container: rpmbuild/centos7
     steps:
-      - run: uname -a
+      - run: ls -la /
