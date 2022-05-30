@@ -3,13 +3,12 @@ on: [push]
 jobs:
   build-rpm:
     container: rpmbuild/centos7
+      volumes: 
+        - /data/
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
     steps:
-      - run: git clone https://github.com/aws/efs-utils.git 
-      - run: printf "SHELL=/bin/bash\n$(cat efs-utils/Makefile)" > efs-utils/Makefile
-      - run: sudo make rpm
-        working-directory: ./efs-utils
-
+      - run: sudo git clone https://github.com/aws/efs-utils.git 
+        working-directory: /data
