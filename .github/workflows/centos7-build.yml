@@ -10,7 +10,7 @@ jobs:
       #- run: sudo apt-get update
       #- run: sudo apt-get install git rpm make -y
       - run: git clone https://github.com/aws/efs-utils.git 
-      - run: echo "SHELL=/bin/bash\n$(cat efs-utils/Makefile)" > efs-utils/Makefile
+      - run: printf "SHELL=/bin/bash\n$(cat efs-utils/Makefile)" > efs-utils/Makefile
       - run: make rpm
         working-directory: ./efs-utils
 
