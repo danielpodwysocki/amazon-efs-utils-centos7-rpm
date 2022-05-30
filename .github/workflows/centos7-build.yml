@@ -1,0 +1,10 @@
+name: Build the RPM
+on: [push]
+jobs:
+  Build the RPM:
+    runs-on: ubuntu-latest
+    steps:
+      - run: git clone https://github.com/aws/efs-utils.git 
+      - run: cd efs-utils
+      - run: make rpm
+
