@@ -2,7 +2,8 @@ name: Build the RPM
 on: [push]
 jobs:
   build-rpm:
-    container: rpmbuild/centos7
+    container: 
+      image: rpmbuild/centos7
       volumes: 
         - /data/
     runs-on: ubuntu-latest
