@@ -2,6 +2,7 @@ name: Build the RPM
 on: [push]
 jobs:
   build-rpm:
+    runs-on: ubuntu-latest
     container: rpmbuild/centos7
     steps:
       - run: ls -la /
