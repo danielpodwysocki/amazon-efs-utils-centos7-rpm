@@ -2,14 +2,11 @@ name: Build the RPM
 on: [push]
 jobs:
   build-rpm:
+    runs-on: ubuntu-latest
     container: 
       image: rpmbuild/centos7
       volumes: 
         - /data/
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
     steps:
       - run: uname -a
         working-directory: /data
