@@ -11,6 +11,6 @@ jobs:
       - run: sudo apt-get install git rpm make systemd -y
       - run: git clone https://github.com/aws/efs-utils.git 
       - run: printf "SHELL=/bin/bash\n$(cat efs-utils/Makefile)" > efs-utils/Makefile
-      - run: make rpm
+      - run: sudo make rpm
         working-directory: ./efs-utils
 
