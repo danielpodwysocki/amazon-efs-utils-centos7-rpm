@@ -2,13 +2,12 @@ name: Build the RPM
 on: [push]
 jobs:
   build-rpm:
+    container: rpmbuild/centos7
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
     steps:
-      - run: sudo apt-get update
-      - run: sudo apt-get install git rpm make systemd -y
       - run: git clone https://github.com/aws/efs-utils.git 
       - run: printf "SHELL=/bin/bash\n$(cat efs-utils/Makefile)" > efs-utils/Makefile
       - run: sudo make rpm
