@@ -4,7 +4,8 @@ jobs:
   build-rpm:
     runs-on: ubuntu-latest
     steps:
-      - run: sudo apt-get install git rpmbuild make -y
+      - run: sudo apt-get update
+      - run: sudo apt-get install git rpm make -y
       - run: git clone https://github.com/aws/efs-utils.git 
       - run: cd efs-utils
       - run: make rpm
