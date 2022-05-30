@@ -3,10 +3,6 @@ on: [push]
 jobs:
   build-rpm:
     runs-on: ubuntu-latest
-    container: 
-      image: rpmbuild/centos7
-      volumes: 
-        - /data/
+    container: rpmbuild/centos7
     steps:
       - run: uname -a
-        working-directory: /data
