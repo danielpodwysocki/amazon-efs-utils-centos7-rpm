@@ -11,5 +11,5 @@ jobs:
       run:
         shell: bash
     steps:
-      - run: sudo git clone https://github.com/aws/efs-utils.git 
+      - run: uname -a
         working-directory: /data
