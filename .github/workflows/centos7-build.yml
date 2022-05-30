@@ -6,7 +6,7 @@ jobs:
     container: rpmbuild/centos7
     steps:
       - run: git clone https://github.com/aws/efs-utils
-        working_directory: /tmp
+        working-directory: /tmp
       - run: make rpm
-        working_directory: /tmp/efs-utils
+        working-directory: /tmp/efs-utils
 
